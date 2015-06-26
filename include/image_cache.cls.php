@@ -47,6 +47,14 @@ class Image_Cache {
   static function resolve_url($url, $protocol, $host, $base_path, DOMPDF $dompdf) {
     $parsed_url = explode_url($url);
     $message = null;
+    	
+    if(!empty($_SERVER['DOCUMENT_ROOT']) && file_exists($_SERVER['DOCUMENT_ROOT'] . $url))
+    {
+    	$protocol = 'file://';
+    	$resolved_url = $protocol . $_SERVER['DOCUMENT_ROOT'] . $url;
+    	list($width, $height, $type) = dompdf_getimagesize($resolved_url);
+    	return array($resolved_url, $type, $message);
+    }
 
     $remote = ($protocol && $protocol !== "file://") || ($parsed_url['protocol'] != "");
     
