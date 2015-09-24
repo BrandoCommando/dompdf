@@ -1,10 +1,14 @@
 {
-    "name": "dompdf/dompdf",
+    "name": "brandocommando/dompdf",
     "type": "library",
-    "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
-    "homepage": "https://github.com/dompdf/dompdf",
+    "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter. This fork allows for local images when generating PDFs.",
+    "homepage": "https://github.com/brandocommando/dompdf",
     "license": "LGPL",
     "authors": [
+        {
+            "name": "Brandon Bowles",
+            "email": "brandroid64@gmail.com"
+        }
         {
             "name": "Fabien Ménager",
             "email": "fabien.menager@gmail.com"
